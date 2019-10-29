@@ -21,7 +21,36 @@ class HomePage extends StatelessWidget {
         title: new Text("Navigation Drawer"),
         elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 2.0,
       ),
-      drawer: new Drawer(),
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text("Atul"),
+              accountEmail: new Text("atulbeniwal43@gmail.com"),
+              currentAccountPicture: new CircleAvatar(
+                backgroundImage: AssetImage("assets/atul.JPG"),
+              ),
+            ),
+            new ListTile(
+              title: new Text("Home"),
+              trailing: new Icon(Icons.home),
+            ),
+            new ListTile(
+              title: new Text("About"),
+              trailing: new Icon(Icons.arrow_drop_down_circle),
+            ),
+            new Divider(),
+            new ListTile(
+              title: new Text("Search"),
+              trailing: new Icon(Icons.search),
+            ),
+            new ListTile(
+              title: new Text("Close"),
+              trailing: new Icon(Icons.close),
+            ),
+          ],
+        ),
+      ),
       body: new Container(
         child: new Center(
           child: new Text("Home"),
