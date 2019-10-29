@@ -9,7 +9,7 @@ class NewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("home page"),
+        title: new Text("next page"),
       ),
       body: new Center(
         child: new Text(title),

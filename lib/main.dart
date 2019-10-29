@@ -48,6 +48,12 @@ class HomePage extends StatelessWidget {
             new ListTile(
               title: new Text("About"),
               trailing: new Icon(Icons.arrow_drop_down_circle),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        new NewPage("About Page")));
+              },
             ),
             new Divider(),
             new ListTile(
