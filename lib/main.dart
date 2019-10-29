@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       theme: new ThemeData(primarySwatch: Colors.blue),
       home: new HomePage(),
-      routes: <String, WidgetBuilder>{
-        "/a": (BuildContext context) => new NewPage("New Page"),
-      },
+      // routes: <String, WidgetBuilder>{
+      //   "/a": (BuildContext context) => new NewPage("New Page"),
+      // },
     );
   }
 }
@@ -38,6 +38,12 @@ class HomePage extends StatelessWidget {
             new ListTile(
               title: new Text("Home"),
               trailing: new Icon(Icons.home),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        new NewPage("Home Page")));
+              },
             ),
             new ListTile(
               title: new Text("About"),
