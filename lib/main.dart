@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation_drawer/new_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,6 +10,9 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       theme: new ThemeData(primarySwatch: Colors.blue),
       home: new HomePage(),
+      routes: <String, WidgetBuilder>{
+        "/a": (BuildContext context) => new NewPage("New Page"),
+      },
     );
   }
 }
@@ -47,6 +51,7 @@ class HomePage extends StatelessWidget {
             new ListTile(
               title: new Text("Close"),
               trailing: new Icon(Icons.close),
+              onTap: () => Navigator.of(context).pop(),
             ),
           ],
         ),
@@ -59,3 +64,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+// backgroundColor: Theme.of(context).platform == TargetPlatform.iOS ? Colors.red : Colors.white
